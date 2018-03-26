@@ -207,10 +207,10 @@ export default class TabBar<T: *> extends React.Component<Props<T>, State> {
       I18nManager.isRTL ? -1 : 1
     );
     return (
-      <Animated.View
+      <View
         style={[
           styles.indicator,
-          { width, transform: [{ translateX }] },
+          { width, transform: [{translate: [width * this.props.navigationState.index, 0, -0]}] },
           this.props.indicatorStyle,
         ]}
       />
